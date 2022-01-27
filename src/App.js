@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { AppBar, Toolbar, IconButton, Typography, Box, Paper, Container } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+const useStyles = makeStyles((theme) => ({
+    root: {},
+    appContainer: {
+        paddingLeft: 100,
+        paddingRight: 100,
+        marginTop: 100,
+    },
+    wrapper: {
+        textAlign: "center",
+        width: "100%",
+    },
+}));
+
+export default  function todos(){
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const classes = useStyles();
+    return (
+        <Box className={classes.root}>
+            <AppBar position='static'>
+                <Toolbar>
+                    <IconButton edge="start" color="inherit">
+                        <img alt="Todo's App" style={{ width: "50px", }} src="logo.png">
+                        </img>
+                    </IconButton>
+                    <Typography variant="h4" textAlign="center"> Todos</Typography>
+                </Toolbar>
+            </AppBar>
+            <Container className={classes.appContainer}>
+                <Paper className={classes.wrapper} elevation={0}>
+                <h1>Vivek Yadav</h1>
+                </Paper>
+            </Container>
+        </Box>
+    );
+
+};
+
+
