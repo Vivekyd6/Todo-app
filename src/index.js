@@ -9,12 +9,12 @@ import ConnectedApp from "./App";
 
 const ReduxApp = () => {
     return (
-     <Provider store={store}>
-     <ConnectedApp/>
-     </Provider>
-);
+        <Provider store={store}>
+            <ConnectedApp />
+        </Provider>
+    );
 };
 
 
 
-ReactDOM.render(<ReduxApp/>, document.getElementById("root"));
+ReactDOM.render(<ReduxApp />, document.getElementById("root"));

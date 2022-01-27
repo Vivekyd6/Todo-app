@@ -2,7 +2,8 @@ import React from 'react';
 import { AppBar, Toolbar, IconButton, Typography, Box, Paper, Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
 
-
+import Addtodo from "./components/Todos/add-todo";
+import TodoContainer from "./components/Todos/todo-container";
 const useStyles = makeStyles((theme) => ({
     root: {},
     appContainer: {
@@ -24,15 +25,16 @@ export default  function todos(){
             <AppBar position='static'>
                 <Toolbar>
                     <IconButton edge="start" color="inherit">
-                        <img alt="Todo's App" style={{ width: "50px", }} src="logo.png">
+                        <img alt="VY ToDo APP" style={{ width: "50px", }} src="logo.png">
                         </img>
                     </IconButton>
-                    <Typography variant="h4" textAlign="center"> Todos</Typography>
+                    <Typography variant="h4" textalign="center"> Todos</Typography>
                 </Toolbar>
             </AppBar>
             <Container className={classes.appContainer}>
                 <Paper className={classes.wrapper} elevation={0}>
-                <h1>Vivek Yadav</h1>
+                    <Addtodo/>
+                <TodoContainer/>
                 </Paper>
             </Container>
         </Box>
