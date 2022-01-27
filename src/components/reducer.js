@@ -1,9 +1,11 @@
 
 import { initialState } from "./initialstate";
 import shortid from "shortid";
-import { ADD_TODO, TOGGLE_COMPLETED ,DELETE_TODO,TOGGLE_IMPORTANT} from "./actions";
+import { ADD_TODO, TOGGLE_COMPLETED, DELETE_TODO, TOGGLE_IMPORTANT } from "./actions";
 
-
+function saveStateToBrowser(state){
+    window.localStorage.setItem("Vy todos",JSON.stringify(state));
+}
 
 function reducer(state = initialState, action) {
     switch (action.type) {
@@ -19,6 +21,7 @@ function reducer(state = initialState, action) {
                 },
                 ],
             };
+            saveStateToBrowser(newState);
             return newState;
         }
 
@@ -34,6 +37,7 @@ function reducer(state = initialState, action) {
                 ...state,
                 todos: newTodos,
             };
+            saveStateToBrowser(newState);
             return newState;
         }
         case DELETE_TODO: {
@@ -44,11 +48,10 @@ function reducer(state = initialState, action) {
                 ...state,
                 todos: newTodos,
             };
-
-           
+            saveStateToBrowser(newState);
             return newState;
         }
-      
+
         case TOGGLE_IMPORTANT: {
             const newTodos = state.todos.map((todo) => {
                 if (todo.id === action.payload.id) {
@@ -61,6 +64,7 @@ function reducer(state = initialState, action) {
                 ...state,
                 todos: newTodos,
             };
+            saveStateToBrowser(newState);
             return newState;
         }
 

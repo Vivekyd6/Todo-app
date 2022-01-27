@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default  function todos(){
+export default function todos() {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const classes = useStyles();
     return (
@@ -28,13 +28,13 @@ export default  function todos(){
                         <img alt="VY ToDo APP" style={{ width: "50px", }} src="logo.png">
                         </img>
                     </IconButton>
-                    <Typography variant="h4" textalign="center"> Todos</Typography>
+                    <Typography variant="h4" textalign="center">VY Todos WebApp</Typography>
                 </Toolbar>
             </AppBar>
             <Container className={classes.appContainer}>
                 <Paper className={classes.wrapper} elevation={0}>
-                    <Addtodo/>
-                <TodoContainer/>
+                    <Addtodo />
+                    <TodoContainer />
                 </Paper>
             </Container>
         </Box>
