@@ -28,7 +28,7 @@ export default function todos() {
                         <img alt="VY ToDo APP" style={{ width: "50px", }} src="logo.png">
                         </img>
                     </IconButton>
-                    <Typography variant="h4" textalign="center">VY Todos WebApp</Typography>
+                    <Typography variant="h4" textAlign="center">VY Todos WebApp</Typography>
                 </Toolbar>
             </AppBar>
             <Container className={classes.appContainer}>
